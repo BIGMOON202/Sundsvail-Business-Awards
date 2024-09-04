@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "186930396296",
+    "firebase_url": "https://sundsvall-business-awards.firebaseio.com",
+    "project_id": "sundsvall-business-awards",
+    "storage_bucket": "sundsvall-business-awards.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186930396296:android:7861cf0685c916e5",
+        "android_client_info": {
+          "package_name": "com.digiling.sba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186930396296-th5d00h9v3r8fe7vpbm2nm8een6ddk90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzN-zvaJhFmGvfRMBIkKm5nWRAARdqNUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186930396296-th5d00h9v3r8fe7vpbm2nm8een6ddk90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
