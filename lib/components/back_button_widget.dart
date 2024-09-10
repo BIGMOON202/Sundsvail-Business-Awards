@@ -26,7 +26,7 @@ class _BackButtonWidgetState extends State<BackButtonWidget> {
     super.initState();
     _model = createModel(context, () => BackButtonModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

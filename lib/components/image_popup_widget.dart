@@ -30,7 +30,7 @@ class _ImagePopupWidgetState extends State<ImagePopupWidget> {
     super.initState();
     _model = createModel(context, () => ImagePopupModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

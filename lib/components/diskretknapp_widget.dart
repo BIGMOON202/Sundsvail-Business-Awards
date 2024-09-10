@@ -25,7 +25,7 @@ class _DiskretknappWidgetState extends State<DiskretknappWidget> {
     super.initState();
     _model = createModel(context, () => DiskretknappModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

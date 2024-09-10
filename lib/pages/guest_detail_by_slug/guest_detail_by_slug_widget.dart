@@ -33,7 +33,7 @@ class _GuestDetailBySlugWidgetState extends State<GuestDetailBySlugWidget> {
     super.initState();
     _model = createModel(context, () => GuestDetailBySlugModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -77,7 +77,7 @@ class _GuestDetailBySlugWidgetState extends State<GuestDetailBySlugWidget> {
               elevation: 16.0,
               child: wrapWithModel(
                 model: _model.drawerContentModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const DrawerContentWidget(),
               ),
             ),
@@ -86,7 +86,7 @@ class _GuestDetailBySlugWidgetState extends State<GuestDetailBySlugWidget> {
               automaticallyImplyLeading: false,
               leading: wrapWithModel(
                 model: _model.backButtonModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const BackButtonWidget(),
               ),
               title: Align(
@@ -113,7 +113,7 @@ class _GuestDetailBySlugWidgetState extends State<GuestDetailBySlugWidget> {
                   },
                   child: wrapWithModel(
                     model: _model.menuToggleModel,
-                    updateCallback: () => setState(() {}),
+                    updateCallback: () => safeSetState(() {}),
                     child: const MenuToggleWidget(),
                   ),
                 ),
@@ -153,7 +153,7 @@ class _GuestDetailBySlugWidgetState extends State<GuestDetailBySlugWidget> {
                                 null)
                               wrapWithModel(
                                 model: _model.guestDetailComponentModel,
-                                updateCallback: () => setState(() {}),
+                                updateCallback: () => safeSetState(() {}),
                                 child: GuestDetailComponentWidget(
                                   guestObject: GetSpecificGuestCall.guest(
                                     guestDetailBySlugGetSpecificGuestResponse

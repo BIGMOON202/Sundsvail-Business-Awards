@@ -37,10 +37,10 @@ class _NewsWidgetState extends State<NewsWidget> {
       await actions.getPushPermission();
       _model.fcm = await actions.getFCMToken();
       FFAppState().FCMToken = _model.fcm!;
-      setState(() {});
+      safeSetState(() {});
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -95,7 +95,7 @@ class _NewsWidgetState extends State<NewsWidget> {
               elevation: 16.0,
               child: wrapWithModel(
                 model: _model.drawerContentModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const DrawerContentWidget(),
               ),
             ),
@@ -144,7 +144,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                   },
                   child: wrapWithModel(
                     model: _model.menuToggleModel,
-                    updateCallback: () => setState(() {}),
+                    updateCallback: () => safeSetState(() {}),
                     child: const MenuToggleWidget(),
                   ),
                 ),
@@ -190,7 +190,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                             size: 24.0,
                           ),
                           onPressed: () async {
-                            setState(() {
+                            safeSetState(() {
                               FFAppState().clearNewsCacheKey(
                                   _model.apiRequestLastUniqueKey);
                               _model.apiRequestCompleted = false;
@@ -199,6 +199,17 @@ class _NewsWidgetState extends State<NewsWidget> {
                           },
                         ),
                       ),
+                    ),
+                    Text(
+                      valueOrDefault<String>(
+                        _model.fcm,
+                        'no',
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Apercu',
+                            letterSpacing: 0.0,
+                            useGoogleFonts: false,
+                          ),
                     ),
                     Padding(
                       padding:

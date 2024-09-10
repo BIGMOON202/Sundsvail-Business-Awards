@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 class AppsponsorModel extends FlutterFlowModel<AppsponsorWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for MenuToggle component.
   late MenuToggleModel menuToggleModel;
   // Model for BackButton component.

@@ -27,7 +27,7 @@ class _ModalKoppladWidgetState extends State<ModalKoppladWidget> {
     super.initState();
     _model = createModel(context, () => ModalKoppladModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

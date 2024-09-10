@@ -27,7 +27,7 @@ class _ProgramWidgetState extends State<ProgramWidget> {
     super.initState();
     _model = createModel(context, () => ProgramModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -48,7 +48,7 @@ class _ProgramWidgetState extends State<ProgramWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -57,7 +57,7 @@ class _ProgramWidgetState extends State<ProgramWidget> {
           automaticallyImplyLeading: false,
           leading: wrapWithModel(
             model: _model.backButtonModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const BackButtonWidget(),
           ),
           title: Align(
@@ -84,7 +84,7 @@ class _ProgramWidgetState extends State<ProgramWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),
@@ -159,7 +159,7 @@ class _ProgramWidgetState extends State<ProgramWidget> {
                                 0.0, 0.0, 0.0, 30.0),
                             child: wrapWithModel(
                               model: _model.programComponentModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: ProgramComponentWidget(
                                 steps: GetProgramCall.steps(
                                   columnGetProgramResponse.jsonBody,

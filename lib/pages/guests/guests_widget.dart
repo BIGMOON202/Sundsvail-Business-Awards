@@ -33,7 +33,7 @@ class _GuestsWidgetState extends State<GuestsWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -56,7 +56,7 @@ class _GuestsWidgetState extends State<GuestsWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -65,7 +65,7 @@ class _GuestsWidgetState extends State<GuestsWidget> {
           automaticallyImplyLeading: false,
           leading: wrapWithModel(
             model: _model.backButtonModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const BackButtonWidget(),
           ),
           title: Align(
@@ -92,7 +92,7 @@ class _GuestsWidgetState extends State<GuestsWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),
@@ -193,7 +193,7 @@ class _GuestsWidgetState extends State<GuestsWidget> {
                       const Duration(milliseconds: 1000),
                       () async {
                         _model.searchTerm = _model.textController.text;
-                        setState(() {});
+                        safeSetState(() {});
                       },
                     ),
                     autofocus: false,
@@ -229,8 +229,8 @@ class _GuestsWidgetState extends State<GuestsWidget> {
                               onTap: () async {
                                 _model.textController?.clear();
                                 _model.searchTerm = _model.textController.text;
-                                setState(() {});
-                                setState(() {});
+                                safeSetState(() {});
+                                safeSetState(() {});
                               },
                               child: Icon(
                                 Icons.clear,
@@ -286,7 +286,8 @@ class _GuestsWidgetState extends State<GuestsWidget> {
                           return RefreshIndicator(
                             color: FlutterFlowTheme.of(context).primary,
                             onRefresh: () async {
-                              setState(() => _model.apiRequestCompleter = null);
+                              safeSetState(
+                                  () => _model.apiRequestCompleter = null);
                               await _model.waitForApiRequestCompleted();
                             },
                             child: ListView.builder(
