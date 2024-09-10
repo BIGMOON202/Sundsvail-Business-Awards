@@ -25,7 +25,7 @@ class _MenuToggleWidgetState extends State<MenuToggleWidget> {
     super.initState();
     _model = createModel(context, () => MenuToggleModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

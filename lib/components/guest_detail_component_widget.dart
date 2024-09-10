@@ -36,7 +36,7 @@ class _GuestDetailComponentWidgetState
     super.initState();
     _model = createModel(context, () => GuestDetailComponentModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

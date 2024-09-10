@@ -35,7 +35,7 @@ class _AwardDetailComponentWidgetState
     super.initState();
     _model = createModel(context, () => AwardDetailComponentModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -38,7 +38,7 @@ class _PresentationPopupWidgetState extends State<PresentationPopupWidget> {
         TextEditingController(text: widget.presentation);
     _model.textFieldPresentationFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -222,7 +222,7 @@ class _PresentationPopupWidgetState extends State<PresentationPopupWidget> {
 
                         Navigator.pop(context);
 
-                        setState(() {});
+                        safeSetState(() {});
                       },
                       text: 'Spara',
                       options: FFButtonOptions(

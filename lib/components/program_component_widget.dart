@@ -32,7 +32,7 @@ class _ProgramComponentWidgetState extends State<ProgramComponentWidget> {
     super.initState();
     _model = createModel(context, () => ProgramComponentModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

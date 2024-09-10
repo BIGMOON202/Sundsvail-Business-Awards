@@ -32,7 +32,7 @@ class _WebviewCustomWidgetState extends State<WebviewCustomWidget> {
     super.initState();
     _model = createModel(context, () => WebviewCustomModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -53,7 +53,7 @@ class _WebviewCustomWidgetState extends State<WebviewCustomWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -62,7 +62,7 @@ class _WebviewCustomWidgetState extends State<WebviewCustomWidget> {
           automaticallyImplyLeading: false,
           leading: wrapWithModel(
             model: _model.backButtonModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const BackButtonWidget(),
           ),
           title: Text(
@@ -86,7 +86,7 @@ class _WebviewCustomWidgetState extends State<WebviewCustomWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),

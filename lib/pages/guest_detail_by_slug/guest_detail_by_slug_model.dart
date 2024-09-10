@@ -13,7 +13,6 @@ class GuestDetailBySlugModel extends FlutterFlowModel<GuestDetailBySlugWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for MenuToggle component.
   late MenuToggleModel menuToggleModel;
   // Model for BackButton component.

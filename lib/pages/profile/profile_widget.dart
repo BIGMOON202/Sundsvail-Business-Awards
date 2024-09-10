@@ -46,7 +46,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
 
     _model.textFieldFocusNode7 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -69,7 +69,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -78,7 +78,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           automaticallyImplyLeading: false,
           leading: wrapWithModel(
             model: _model.backButtonModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const BackButtonWidget(),
           ),
           title: Align(
@@ -105,7 +105,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),
@@ -183,7 +183,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 onTap: () async {
                                                   _model.editingName =
                                                       !_model.editingName;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 },
                                                 child: Row(
                                                   mainAxisSize:
@@ -250,7 +250,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                           _model.editingName =
                                                               !_model
                                                                   .editingName;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         },
                                                         child: FaIcon(
                                                           FontAwesomeIcons
@@ -631,7 +631,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 _model.editingName =
                                                                     !_model
                                                                         .editingName;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                                 FFAppState()
                                                                     .updateActiveTicketStruct(
                                                                   (e) => e
@@ -644,7 +645,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                             .textController2
                                                                             .text,
                                                                 );
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               } else {
                                                                 ScaffoldMessenger.of(
                                                                         context)
@@ -681,7 +683,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 );
                                                               }
 
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                             },
                                                             text: 'Spara',
                                                             options:
@@ -756,7 +759,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                               _model.editingName =
                                                                   !_model
                                                                       .editingName;
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                             },
                                                             child: const Icon(
                                                               Icons.close_sharp,
@@ -829,7 +833,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   onTap: () async {
                                                     _model.editingOrg =
                                                         !_model.editingOrg;
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                   },
                                                   child: Row(
                                                     mainAxisSize:
@@ -959,7 +963,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                             _model.editingOrg =
                                                                 !_model
                                                                     .editingOrg;
-                                                            setState(() {});
+                                                            safeSetState(() {});
                                                           },
                                                           child: FaIcon(
                                                             FontAwesomeIcons
@@ -1188,7 +1192,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 _model.editingOrg =
                                                                     !_model
                                                                         .editingOrg;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                                 FFAppState()
                                                                     .updateActiveTicketStruct(
                                                                   (e) => e
@@ -1196,7 +1201,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                         .textController3
                                                                         .text,
                                                                 );
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               } else {
                                                                 ScaffoldMessenger.of(
                                                                         context)
@@ -1233,7 +1239,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 );
                                                               }
 
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                             },
                                                             text: 'Spara',
                                                             options:
@@ -1306,7 +1313,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                               onTap: () async {
                                                                 _model.editingOrg =
                                                                     false;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: const Icon(
                                                                 Icons
@@ -1335,7 +1343,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                   onTap: () async {
                                                     _model.editingLinkedin =
                                                         !_model.editingLinkedin;
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                   },
                                                   child: Row(
                                                     mainAxisSize:
@@ -1500,7 +1508,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                             _model.editingLinkedin =
                                                                 !_model
                                                                     .editingLinkedin;
-                                                            setState(() {});
+                                                            safeSetState(() {});
                                                           },
                                                           child: FaIcon(
                                                             FontAwesomeIcons
@@ -1727,7 +1735,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 _model.editingLinkedin =
                                                                     !_model
                                                                         .editingLinkedin;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               } else {
                                                                 ScaffoldMessenger.of(
                                                                         context)
@@ -1764,7 +1773,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 );
                                                               }
 
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                             },
                                                             text: 'Spara',
                                                             options:
@@ -1838,7 +1848,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 _model.editingLinkedin =
                                                                     !_model
                                                                         .editingLinkedin;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: const Icon(
                                                                 Icons
@@ -1870,7 +1881,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                       onTap: () async {
                                                         _model.editingUrl =
                                                             !_model.editingUrl;
-                                                        setState(() {});
+                                                        safeSetState(() {});
                                                       },
                                                       child: Row(
                                                         mainAxisSize:
@@ -1999,7 +2010,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 _model.editingUrl =
                                                                     !_model
                                                                         .editingUrl;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: FaIcon(
                                                                 FontAwesomeIcons
@@ -2208,7 +2220,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     _model.editingUrl =
                                                                         !_model
                                                                             .editingUrl;
-                                                                    setState(
+                                                                    safeSetState(
                                                                         () {});
                                                                   } else {
                                                                     ScaffoldMessenger.of(
@@ -2239,7 +2251,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     );
                                                                   }
 
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 },
                                                                 text: 'Spara',
@@ -2314,7 +2326,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     _model.editingUrl =
                                                                         !_model
                                                                             .editingUrl;
-                                                                    setState(
+                                                                    safeSetState(
                                                                         () {});
                                                                   },
                                                                   child: const Icon(
@@ -2350,7 +2362,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         _model.editingEmail =
                                                             !_model
                                                                 .editingEmail;
-                                                        setState(() {});
+                                                        safeSetState(() {});
                                                       },
                                                       child: Row(
                                                         mainAxisSize:
@@ -2479,7 +2491,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 _model.editingEmail =
                                                                     !_model
                                                                         .editingEmail;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: FaIcon(
                                                                 FontAwesomeIcons
@@ -2688,7 +2701,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     _model.editingEmail =
                                                                         !_model
                                                                             .editingEmail;
-                                                                    setState(
+                                                                    safeSetState(
                                                                         () {});
                                                                   } else {
                                                                     ScaffoldMessenger.of(
@@ -2719,7 +2732,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     );
                                                                   }
 
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 },
                                                                 text: 'Spara',
@@ -2794,7 +2807,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     _model.editingEmail =
                                                                         !_model
                                                                             .editingEmail;
-                                                                    setState(
+                                                                    safeSetState(
                                                                         () {});
                                                                   },
                                                                   child: const Icon(
@@ -2830,7 +2843,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         _model.editingPhone =
                                                             !_model
                                                                 .editingPhone;
-                                                        setState(() {});
+                                                        safeSetState(() {});
                                                       },
                                                       child: Row(
                                                         mainAxisSize:
@@ -2959,7 +2972,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                 _model.editingPhone =
                                                                     !_model
                                                                         .editingPhone;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: FaIcon(
                                                                 FontAwesomeIcons
@@ -3168,7 +3182,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     _model.editingPhone =
                                                                         !_model
                                                                             .editingPhone;
-                                                                    setState(
+                                                                    safeSetState(
                                                                         () {});
                                                                   } else {
                                                                     ScaffoldMessenger.of(
@@ -3199,7 +3213,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     );
                                                                   }
 
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 },
                                                                 text: 'Spara',
@@ -3274,7 +3288,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                     _model.editingPhone =
                                                                         !_model
                                                                             .editingPhone;
-                                                                    setState(
+                                                                    safeSetState(
                                                                         () {});
                                                                   },
                                                                   child: const Icon(
@@ -3398,7 +3412,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                             ),
                                                             onChanged:
                                                                 (newValue) async {
-                                                              setState(() =>
+                                                              safeSetState(() =>
                                                                   _model.switchValue1 =
                                                                       newValue);
                                                               if (newValue) {
@@ -3468,7 +3482,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                   );
                                                                 }
 
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               } else {
                                                                 _model.apiResultTogglePhoneOff =
                                                                     await ToggleProfileEmailCall
@@ -3536,7 +3551,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                   );
                                                                 }
 
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               }
                                                             },
                                                             activeColor:
@@ -3630,7 +3646,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                             ),
                                                             onChanged:
                                                                 (newValue) async {
-                                                              setState(() =>
+                                                              safeSetState(() =>
                                                                   _model.switchValue2 =
                                                                       newValue);
                                                               if (newValue) {
@@ -3700,7 +3716,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                   );
                                                                 }
 
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               } else {
                                                                 _model.apiResultToggleEmailOff =
                                                                     await ToggleProfileEmailCall
@@ -3768,7 +3785,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                   );
                                                                 }
 
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               }
                                                             },
                                                             activeColor:
@@ -4227,7 +4245,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                   textColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 );
                                                                                 if (selectedMedia != null && selectedMedia.every((m) => validateFileFormat(m.storagePath, context))) {
-                                                                                  setState(() => _model.isDataUploading = true);
+                                                                                  safeSetState(() => _model.isDataUploading = true);
                                                                                   var selectedUploadedFiles = <FFUploadedFile>[];
 
                                                                                   try {
@@ -4244,11 +4262,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                     _model.isDataUploading = false;
                                                                                   }
                                                                                   if (selectedUploadedFiles.length == selectedMedia.length) {
-                                                                                    setState(() {
+                                                                                    safeSetState(() {
                                                                                       _model.uploadedLocalFile = selectedUploadedFiles.first;
                                                                                     });
                                                                                   } else {
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                     return;
                                                                                   }
                                                                                 }
@@ -4290,7 +4308,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                   );
                                                                                 }
 
-                                                                                setState(() {});
+                                                                                safeSetState(() {});
                                                                               },
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
@@ -4411,7 +4429,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                     );
                                                                                   }
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,

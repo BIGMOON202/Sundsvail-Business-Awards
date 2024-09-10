@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 class AwardDetailModel extends FlutterFlowModel<AwardDetailWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for MenuToggle component.
   late MenuToggleModel menuToggleModel;
   // Model for BackButton component.

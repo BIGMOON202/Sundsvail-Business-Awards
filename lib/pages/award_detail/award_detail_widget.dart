@@ -30,7 +30,7 @@ class _AwardDetailWidgetState extends State<AwardDetailWidget> {
     super.initState();
     _model = createModel(context, () => AwardDetailModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -51,7 +51,7 @@ class _AwardDetailWidgetState extends State<AwardDetailWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -68,7 +68,7 @@ class _AwardDetailWidgetState extends State<AwardDetailWidget> {
             },
             child: wrapWithModel(
               model: _model.backButtonModel,
-              updateCallback: () => setState(() {}),
+              updateCallback: () => safeSetState(() {}),
               child: const BackButtonWidget(),
             ),
           ),
@@ -96,7 +96,7 @@ class _AwardDetailWidgetState extends State<AwardDetailWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),
@@ -118,7 +118,7 @@ class _AwardDetailWidgetState extends State<AwardDetailWidget> {
           top: true,
           child: wrapWithModel(
             model: _model.awardDetailComponentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: AwardDetailComponentWidget(
               awardObject: widget.awardObject,
             ),

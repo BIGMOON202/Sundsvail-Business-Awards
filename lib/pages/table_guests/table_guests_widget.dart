@@ -33,7 +33,7 @@ class _TableGuestsWidgetState extends State<TableGuestsWidget> {
     super.initState();
     _model = createModel(context, () => TableGuestsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -56,7 +56,7 @@ class _TableGuestsWidgetState extends State<TableGuestsWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -65,7 +65,7 @@ class _TableGuestsWidgetState extends State<TableGuestsWidget> {
           automaticallyImplyLeading: false,
           leading: wrapWithModel(
             model: _model.backButtonModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const BackButtonWidget(),
           ),
           title: Align(
@@ -92,7 +92,7 @@ class _TableGuestsWidgetState extends State<TableGuestsWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),

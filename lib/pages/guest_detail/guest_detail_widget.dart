@@ -31,7 +31,7 @@ class _GuestDetailWidgetState extends State<GuestDetailWidget> {
     super.initState();
     _model = createModel(context, () => GuestDetailModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -54,7 +54,7 @@ class _GuestDetailWidgetState extends State<GuestDetailWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -63,7 +63,7 @@ class _GuestDetailWidgetState extends State<GuestDetailWidget> {
           automaticallyImplyLeading: false,
           leading: wrapWithModel(
             model: _model.backButtonModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const BackButtonWidget(),
           ),
           title: Align(
@@ -90,7 +90,7 @@ class _GuestDetailWidgetState extends State<GuestDetailWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),
@@ -150,7 +150,7 @@ class _GuestDetailWidgetState extends State<GuestDetailWidget> {
                                 0.0, 10.0, 0.0, 0.0),
                             child: wrapWithModel(
                               model: _model.guestDetailComponentModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: GuestDetailComponentWidget(
                                 guestObject: widget.guestObject!,
                               ),

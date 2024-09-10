@@ -40,7 +40,7 @@ class _AwardDetailByIDWidgetState extends State<AwardDetailByIDWidget> {
       await actions.pushNotiification();
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -84,7 +84,7 @@ class _AwardDetailByIDWidgetState extends State<AwardDetailByIDWidget> {
               elevation: 16.0,
               child: wrapWithModel(
                 model: _model.drawerContentModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const DrawerContentWidget(),
               ),
             ),
@@ -101,7 +101,7 @@ class _AwardDetailByIDWidgetState extends State<AwardDetailByIDWidget> {
                 },
                 child: wrapWithModel(
                   model: _model.backButtonModel,
-                  updateCallback: () => setState(() {}),
+                  updateCallback: () => safeSetState(() {}),
                   child: const BackButtonWidget(),
                 ),
               ),
@@ -129,7 +129,7 @@ class _AwardDetailByIDWidgetState extends State<AwardDetailByIDWidget> {
                   },
                   child: wrapWithModel(
                     model: _model.menuToggleModel,
-                    updateCallback: () => setState(() {}),
+                    updateCallback: () => safeSetState(() {}),
                     child: const MenuToggleWidget(),
                   ),
                 ),
@@ -151,7 +151,7 @@ class _AwardDetailByIDWidgetState extends State<AwardDetailByIDWidget> {
               top: true,
               child: wrapWithModel(
                 model: _model.awardDetailComponentModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: AwardDetailComponentWidget(
                   awardObject: GetAwardCall.award(
                     awardDetailByIDGetAwardResponse.jsonBody,

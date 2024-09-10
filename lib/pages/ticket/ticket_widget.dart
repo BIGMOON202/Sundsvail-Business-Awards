@@ -36,7 +36,7 @@ class _TicketWidgetState extends State<TicketWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -59,7 +59,7 @@ class _TicketWidgetState extends State<TicketWidget> {
           elevation: 16.0,
           child: wrapWithModel(
             model: _model.drawerContentModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const DrawerContentWidget(),
           ),
         ),
@@ -68,7 +68,7 @@ class _TicketWidgetState extends State<TicketWidget> {
           automaticallyImplyLeading: false,
           leading: wrapWithModel(
             model: _model.backButtonModel,
-            updateCallback: () => setState(() {}),
+            updateCallback: () => safeSetState(() {}),
             child: const BackButtonWidget(),
           ),
           title: Align(
@@ -95,7 +95,7 @@ class _TicketWidgetState extends State<TicketWidget> {
               },
               child: wrapWithModel(
                 model: _model.menuToggleModel,
-                updateCallback: () => setState(() {}),
+                updateCallback: () => safeSetState(() {}),
                 child: const MenuToggleWidget(),
               ),
             ),
@@ -241,7 +241,7 @@ class _TicketWidgetState extends State<TicketWidget> {
 
                                               FFAppState().claimedTicketHash =
                                                   _model.scannedCode;
-                                              setState(() {});
+                                              safeSetState(() {});
                                             }
 
                                             ScaffoldMessenger.of(context)
@@ -332,7 +332,7 @@ class _TicketWidgetState extends State<TicketWidget> {
                                                   r'''$.ticket_hash''',
                                                 ).toString(),
                                               );
-                                              setState(() {});
+                                              safeSetState(() {});
                                               await showDialog(
                                                 context: context,
                                                 builder: (dialogContext) {
@@ -427,7 +427,7 @@ class _TicketWidgetState extends State<TicketWidget> {
                                               );
                                             }
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           text: 'Scanna biljett',
                                           options: FFButtonOptions(
@@ -581,10 +581,10 @@ class _TicketWidgetState extends State<TicketWidget> {
                                         onPressed: () async {
                                           FFAppState().claimedTicketHash =
                                               _model.textController.text;
-                                          setState(() {});
+                                          safeSetState(() {});
                                           await action_blocks
                                               .connectTicket(context);
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         text: 'Skicka',
                                         options: FFButtonOptions(
@@ -850,7 +850,7 @@ class _TicketWidgetState extends State<TicketWidget> {
                                             FFAppState().ticketHash = '';
                                             FFAppState().activeTicket =
                                                 TicketStruct();
-                                            setState(() {});
+                                            safeSetState(() {});
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(

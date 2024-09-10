@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 class NewsModel extends FlutterFlowModel<NewsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getFCMToken] action in News widget.
   String? fcm;
   // Model for MenuToggle component.
